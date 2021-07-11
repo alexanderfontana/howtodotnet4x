@@ -16,12 +16,8 @@ namespace _002_dotnet4xsimpleoracleproject {
             Stopwatch sw = new Stopwatch ();
             sw.Start ();
             string conString = "User Id=dummy;Password=dummy;Data Source=localhost:1521/ORCLCDB.localdomain";
-
-
-
             DbProviderFactory factory =
             DbProviderFactories.GetFactory ("Oracle.ManagedDataAccess.Client");
-
             using (DbConnection conn = factory.CreateConnection ()) {
                 conn.ConnectionString = conString;
                 try {
@@ -30,13 +26,11 @@ namespace _002_dotnet4xsimpleoracleproject {
                     cmd.Connection = (OracleConnection)conn;
                     cmd.AddRowid = true;
                     cmd.CommandText = "select id  from foo;";
-
                     OracleDataReader reader = cmd.ExecuteReader ();
                    while (reader.Read()) {
                         int id = reader.GetInt32 (0);
                         Console.WriteLine ($"gelesen Wert id: {id}");
                     }
-
                     reader.Dispose ();
                     cmd.Dispose ();
                 }
@@ -44,7 +38,6 @@ namespace _002_dotnet4xsimpleoracleproject {
                     Console.WriteLine (ex.Message);
                     Console.WriteLine (ex.StackTrace);
                 }
-
 
                 sw.Stop ();
                 Console.WriteLine ($"Das Dauerte: {sw.ElapsedMilliseconds} ms");
