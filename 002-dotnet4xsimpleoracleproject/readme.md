@@ -1,7 +1,7 @@
 ﻿
 ## 002-dotnet4xsimpleoracleproject
 Basierend auf einem Docker-Container, welcher OracleDB enthält.
-Diese Verbibdung ermöglicht Zugriff auf eine Tabelle: foo
+Diese Verbindung ermöglicht Zugriff auf eine Tabelle: foo
 die Tabelle foo hat eine Spalte id(int)
 Einfacher Zugriff über Oracle-Treiber und den datareader
 
