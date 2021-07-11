@@ -8,6 +8,16 @@ Visual Studio->Neues Projekt -> dotnet Konsole->Version 4.8 ->fertig
 
 
 
+ToDO
+## 002-dotnet4xsimpleoracleproject
+Basierend auf einem Docker-Container, welcher OracleDB enthält.
+Einfacher Zugriff über datareader
+
+
+
+
+
+
 Just Access a Oracle Db- in Docker Container- with EF Core 
 Model First = DBContext.CS written by Hand.
 Model took and Tables will created by EFCore
