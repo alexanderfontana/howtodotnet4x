@@ -10,7 +10,7 @@ Visual Studio->Neues Projekt -> dotnet Konsole->Version 4.8 ->fertig
 
 
 ## 002-dotnet4xsimpleoracleproject
-* 2 [dotnet4xsimpleprojectNetCore ](https://github.com/alexanderfontana/howtodotnet4x/blob/master/002-dotnet4xsimpleoracleproject/readme.md)
+* 2 [dotnet4xsimpleprojectNetCore ](https://github.com/alexanderfontana/howtodotnet4x/blob/master/002-dotnet4xsimpleoracleproject)
 
 Basierend auf einem Docker-Container, welcher OracleDB enthält.
 Diese Verbidung hat Zugriff auf eine Tabelle: foo
