@@ -16,11 +16,7 @@ Einfacher Zugriff über Oracle-Treiber und den datareader
 
 
 ## 003-dotnet4xsimplemsoracleConnect
-Oracle Zugriff mit MS Bordmitteln
-https://docs.microsoft.com/de-de/dotnet/api/system.data.oracleclient?view=netframework-4.8
-Alt und Oracle Client nötig.
-  // System.Data.OracleClient erfordert version 8.1.7 oder höher der Oracle-Clientsoftware.
-             
+* 3 [dotnet4xsimplemsoracleConnect](https://github.com/alexanderfontana/howtodotnet4x/tree/master/003-dotnet4xsimplemsoracleprojekt)
 
 
 

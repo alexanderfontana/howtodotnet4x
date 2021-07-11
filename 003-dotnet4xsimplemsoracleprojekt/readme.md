@@ -17,3 +17,6 @@ Braucht Oracle Client Software
 Exception
 System.Data.OracleClient erfordert version 8.1.7 oder höher der Oracle-Clientsoftware.
 
+
+
+
