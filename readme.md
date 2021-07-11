@@ -3,15 +3,13 @@
 
 
 ## 001-dotnet4xsimpleproject
-einfaches Hallo World
-Visual Studio->Neues Projekt -> dotnet Konsole->Version 4.8 ->fertig
+* 2 [dotnet4xsimpleproject ](https://github.com/alexanderfontana/howtodotnet4x/tree/master/001-dotnet4xsimpleproject)
 
 
 
 
 ## 002-dotnet4xsimpleoracleproject
-* 2 [dotnet4xsimpleprojectNetCore ](https://github.com/alexanderfontana/howtodotnet4x/blob/master/002-dotnet4xsimpleoracleproject)
-
+* 2 [dotnet4xsimpleoracleproject](https://github.com/alexanderfontana/howtodotnet4x/blob/master/002-dotnet4xsimpleoracleproject)
 Basierend auf einem Docker-Container, welcher OracleDB enthält.
 Diese Verbidung hat Zugriff auf eine Tabelle: foo
 foo hat eine Spalte id(int)
