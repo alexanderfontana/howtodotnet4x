@@ -25,6 +25,11 @@ Install:
 ODTforVS2019
 
 
+## 003-dotnet4xsimplemsoracleConnect
+Oracle Zugriff mit MS Bordmitteln
+https://docs.microsoft.com/de-de/dotnet/api/system.data.oracleclient?view=netframework-4.8
+
+
 
 2. Install Oracle Developer Tools For Visual Studio
 Install Visual Studio 2019 if you do not already have it.

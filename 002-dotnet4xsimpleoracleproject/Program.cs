@@ -28,17 +28,14 @@ namespace _002_dotnet4xsimpleoracleproject {
                     conn.Open ();
                     OracleCommand cmd = (OracleCommand)factory.CreateCommand ();
                     cmd.Connection = (OracleConnection)conn;
-
-                    //to gain access to ROWIDs of the table
                     cmd.AddRowid = true;
                     cmd.CommandText = "select id  from foo;";
 
                     OracleDataReader reader = cmd.ExecuteReader ();
-                    int visFC = reader.VisibleFieldCount; //Results in 2
-                    int hidFC = reader.HiddenFieldCount;  // Results in 1
-
-                    Console.Write ("Visible field count: " + visFC);
-                    Console.Write ("Hidden field count: " + hidFC);
+                   while (reader.Read()) {
+                        int id = reader.GetInt32 (0);
+                        Console.WriteLine ($"gelesen Wert id: {id}");
+                    }
 
                     reader.Dispose ();
                     cmd.Dispose ();
