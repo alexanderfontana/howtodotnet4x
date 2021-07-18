@@ -68,7 +68,6 @@ namespace dotnet4xefModelFirst {
                             Console.WriteLine ($"ID: {item.ID} vorname:{item.Vorname}");
                         }
                     }
-
                 }
             }
             catch (OracleException oraex) {
