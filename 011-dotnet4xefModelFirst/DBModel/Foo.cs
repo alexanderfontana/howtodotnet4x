@@ -11,7 +11,7 @@ namespace dotnet4xefModelFirst.DBModel {
     [Table ("FOO")]
     public class Foo {
         public int ID { get; set; }
-        public int DummyData { get; set; }
+    //    public int DummyData { get; set; }
         public Foo() {
 
         }

@@ -18,14 +18,22 @@ namespace dotnet4xefModelFirst {
             Stopwatch sw = new Stopwatch ();
             sw.Start ();
             try {
-                FooContext ctx = new FooContext ();
-                var res = (from f in ctx.Foo select f).ToList ();
+                using (FooContext ctx = new FooContext ()) {
+                    var res = (from f in ctx.Foo select f).ToList ();
+                    if (res.Count > 0) {
+                        Console.WriteLine ("Data available:");
+                    }
+                    if (res.Count == 0) {
+                        Console.WriteLine ("No Data available");
 
-                if (res.Count > 0) {
-                    Console.WriteLine ("Data available:");
-                }
-                foreach (Foo item in res) {
-                    Console.WriteLine (item.ID);
+//                        var sql = ((System.Data.Entity.Core.Objects.ObjectQuery)res).ToTraceString ();
+
+
+                    }
+
+                    foreach (Foo item in res) {
+                        Console.WriteLine (item.ID);
+                    }
                 }
             }
             catch (OracleException oraex) {
@@ -36,8 +44,8 @@ namespace dotnet4xefModelFirst {
             }
             catch (Exception ex) {
                 Console.WriteLine ("Exception ");
-                Console.WriteLine (ex.Message.ToString());
-                if(ex.InnerException != null) {
+                Console.WriteLine (ex.Message.ToString ());
+                if (ex.InnerException != null) {
                     Console.WriteLine (ex.InnerException.ToString ());
                 }
 

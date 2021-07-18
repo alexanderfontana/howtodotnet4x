@@ -15,7 +15,7 @@ namespace dotnet4xefModelFirst.DBModel {
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.HasDefaultSchema ("DUMMY");
-       //     base.OnModelCreating (modelBuilder);
+          //  base.OnModelCreating (modelBuilder);
         }
 
      
