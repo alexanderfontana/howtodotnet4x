@@ -81,6 +81,12 @@
   <ItemGroup>
     <Compile Include="DBModel\Foo.cs" />
     <Compile Include="DBModel\FooContext.cs" />
+    <Compile Include="DBModel\Personen.cs" />
+    <Compile Include="Migrations\202107181948340_mig1.cs" />
+    <Compile Include="Migrations\202107181948340_mig1.Designer.cs">
+      <DependentUpon>202107181948340_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -88,6 +94,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107181948340_mig1.resx">
+      <DependentUpon>202107181948340_mig1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,19 +19,14 @@ namespace dotnet4xefModelFirst {
             sw.Start ();
             try {
                 using (FooContext ctx = new FooContext ()) {
-                    var res = (from f in ctx.Foo select f).ToList ();
-                    if (res.Count > 0) {
+                    var resFoo = (from f in ctx.Foo select f).ToList ();
+                    if (resFoo.Count > 0) {
                         Console.WriteLine ("Data available:");
                     }
-                    if (res.Count == 0) {
+                    if (resFoo.Count == 0) {
                         Console.WriteLine ("No Data available");
-
-//                        var sql = ((System.Data.Entity.Core.Objects.ObjectQuery)res).ToTraceString ();
-
-
                     }
-
-                    foreach (Foo item in res) {
+                    foreach (Foo item in resFoo) {
                         Console.WriteLine (item.ID);
                     }
                 }
@@ -48,8 +43,50 @@ namespace dotnet4xefModelFirst {
                 if (ex.InnerException != null) {
                     Console.WriteLine (ex.InnerException.ToString ());
                 }
+            }
+
+
+            // Hinzufügen einer Person
+            Console.WriteLine ("Start-Person wird hinzufefügt");
+            using (FooContext ctx = new FooContext ()) {
+                Personen p = new Personen ();
+                p.Vorname = "Hans";
+                ctx.Personen.Add (p);
+                ctx.SaveChanges ();
+            }
+            Console.WriteLine ("Ende-Person wird hinzufefügt");
+
+
+
+            Console.WriteLine ("Abfrage Personen....");
+            try {
+                using (FooContext ctx = new FooContext ()) {
+                    var resPersonen = (from f in ctx.Personen select f).ToList ();
+                    if (resPersonen.Count > 0) {
+                        Console.WriteLine ("Data available:");
+                        foreach (Personen item in resPersonen) {
+                            Console.WriteLine ($"ID: {item.ID} vorname:{item.Vorname}");
+                        }
+                    }
+
+                }
+            }
+            catch (OracleException oraex) {
+                Console.WriteLine ("Oracle Errors ");
+                foreach (OracleError err in oraex.Errors) {
+                    Console.WriteLine (err.Message);
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine ("Exception ");
+                Console.WriteLine (ex.Message.ToString ());
+                if (ex.InnerException != null) {
+                    Console.WriteLine (ex.InnerException.ToString ());
+                }
 
             }
+
+
 
             Console.ReadKey ();
         }

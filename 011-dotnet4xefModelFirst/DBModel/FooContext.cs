@@ -10,12 +10,13 @@ namespace dotnet4xefModelFirst.DBModel {
     public class FooContext : DbContext {
         public DbSet<Foo> Foo { get; set; }
 
+        public DbSet<Personen> Personen { get; set; }
 
         public FooContext() : base ("OracleDbContext") {
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.HasDefaultSchema ("DUMMY");
-          //  base.OnModelCreating (modelBuilder);
+            base.OnModelCreating (modelBuilder);
         }
 
      
