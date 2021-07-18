@@ -11,34 +11,23 @@ https://docs.oracle.com/cd/E56485_01/win.121/e55744/InstallEntityConfig.htm#ODPN
 Datenbankcontext in FooContext
 
 
-Einfacher Zugriff über Oracle-Treiber und den datareader
+using Oracle.ManagedDataAccess.EntityFramework;
 
-Oracle Infos:
-https://github.com/oracle/dotnet-db-samples
-https://www.oracle.com/tools/technologies/quickstart-dotnet-for-oracle-database.html#fourth-option-tab
-Bei Oracle Account einrichten
-Download
-Open the downloaded zip file and extract the ODTforVS2019_193200.vsix file to a temporary location. Double click the vsix file to run the installer.
-Install:
-ODTforVS2019
+Install-Package EntityFramework
+Install-Package Oracle.ManagedDataAccess.EntityFramework -Version 19.7.0
+
+ConnectionString
+ODP.NET, Managed Driver
+<provider invariantName="Oracle.ManagedDataAccess.Client" type="Oracle.ManagedDataAccess.EntityFramework.EFOracleProviderServices, Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />
 
 
+ODP.NET, Managed Driver
 
-2. Install Oracle Developer Tools For Visual Studio
-Install Visual Studio 2019 if you do not already have it.
-Download Oracle Developer Tools for Visual Studio 19.3.2.
-Open the downloaded zip file and extract the ODTforVS2019_193200.vsix file to a temporary location. Double click the vsix file to run the installer.
-Once the installation is complete, launch Visual Studio 2019.
-A dialog may appear stating that Oracle Developer Tools for Visual Studio
-needs to perform additional configuration.
-If it does, close Visual Studio then follow the prompts in the dialog. 
-Once the dialog finishes, launch Visual Studio 2019 again.
-
-Vorgehen:
-1. Erweiterung installieren -> VS-> extension->hinzufügen :Oracle Developer Tools For Visual Studio
+<provider invariantName="Oracle.ManagedDataAccess.Client" type="Oracle.ManagedDataAccess.EntityFramework.EFOracleProviderServices, Oracle.ManagedDataAccess.EntityFr
 
 
-2. der Oracle Treiber muss mit der hand in die Verweise dazu gefügt werden.
-aus dem Package-Verzeichnis
 
+
+
+https://docs.microsoft.com/de-de/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 

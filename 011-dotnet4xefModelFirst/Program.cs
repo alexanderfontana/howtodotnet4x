@@ -7,42 +7,22 @@ using System.Threading.Tasks;
 using System.Data;
 using Oracle.ManagedDataAccess.Client;
 using System.Data.Common;
-//ODP.NetCore
-//Oracle.ManagedDataAccess 
+using Oracle.ManagedDataAccess.EntityFramework;
+using dotnet4xefModelFirst.DBModel;
 
-namespace _002_dotnet4xsimpleoracleproject {
+//https://entityframework-extensions.net/oracle-provider
+// https://www.programmersought.com/article/91055016143/
+namespace dotnet4xefModelFirst {
     class Program {
         static void Main(string [] args) {
             Stopwatch sw = new Stopwatch ();
             sw.Start ();
-            string conString = "User Id=dummy;Password=dummy;Data Source=localhost:1521/ORCLCDB.localdomain";
-            DbProviderFactory factory =
-            DbProviderFactories.GetFactory ("Oracle.ManagedDataAccess.Client");
-            using (DbConnection conn = factory.CreateConnection ()) {
-                conn.ConnectionString = conString;
-                try {
-                    conn.Open ();
-                    OracleCommand cmd = (OracleCommand)factory.CreateCommand ();
-                    cmd.Connection = (OracleConnection)conn;
-                    cmd.AddRowid = true;
-                    cmd.CommandText = "select id  from foo;";
-                    OracleDataReader reader = cmd.ExecuteReader ();
-                   while (reader.Read()) {
-                        int id = reader.GetInt32 (0);
-                        Console.WriteLine ($"gelesen Wert id: {id}");
-                    }
-                    reader.Dispose ();
-                    cmd.Dispose ();
-                }
-                catch (Exception ex) {
-                    Console.WriteLine (ex.Message);
-                    Console.WriteLine (ex.StackTrace);
-                }
 
-                sw.Stop ();
-                Console.WriteLine ($"Das Dauerte: {sw.ElapsedMilliseconds} ms");
-                Console.ReadKey ();
-            }
+            FooContext ctx = new FooContext ();
+
+            var res = (from f in ctx.Foo select f).ToList ();
+            int i = 0;
+            i++;
         }
     }
 }

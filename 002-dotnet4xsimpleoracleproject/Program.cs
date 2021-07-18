@@ -25,7 +25,7 @@ namespace _002_dotnet4xsimpleoracleproject {
                     OracleCommand cmd = (OracleCommand)factory.CreateCommand ();
                     cmd.Connection = (OracleConnection)conn;
                     cmd.AddRowid = true;
-                    cmd.CommandText = "select id  from foo;";
+                    cmd.CommandText = "select id  from foos;";
                     OracleDataReader reader = cmd.ExecuteReader ();
                    while (reader.Read()) {
                         int id = reader.GetInt32 (0);
@@ -33,6 +33,12 @@ namespace _002_dotnet4xsimpleoracleproject {
                     }
                     reader.Dispose ();
                     cmd.Dispose ();
+                }
+                catch(OracleException oraex) {
+                    Console.WriteLine ("Oracle Errors ");
+                    foreach (OracleError err in oraex.Errors) {
+                        Console.WriteLine ( err.Message);
+                   }
                 }
                 catch (Exception ex) {
                     Console.WriteLine (ex.Message);
