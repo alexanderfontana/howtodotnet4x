@@ -20,6 +20,10 @@ namespace dotnet4xefModelFirst {
             try {
                 FooContext ctx = new FooContext ();
                 var res = (from f in ctx.Foo select f).ToList ();
+
+                if (res.Count > 0) {
+                    Console.WriteLine ("Data available:");
+                }
                 foreach (Foo item in res) {
                     Console.WriteLine (item.ID);
                 }
@@ -33,7 +37,9 @@ namespace dotnet4xefModelFirst {
             catch (Exception ex) {
                 Console.WriteLine ("Exception ");
                 Console.WriteLine (ex.Message.ToString());
-                Console.WriteLine (ex.InnerException.ToString());
+                if(ex.InnerException != null) {
+                    Console.WriteLine (ex.InnerException.ToString ());
+                }
 
             }
 
