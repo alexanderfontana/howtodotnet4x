@@ -17,12 +17,27 @@ namespace dotnet4xefModelFirst {
         static void Main(string [] args) {
             Stopwatch sw = new Stopwatch ();
             sw.Start ();
+            try {
+                FooContext ctx = new FooContext ();
+                var res = (from f in ctx.Foo select f).ToList ();
+                foreach (Foo item in res) {
+                    Console.WriteLine (item.ID);
+                }
+            }
+            catch (OracleException oraex) {
+                Console.WriteLine ("Oracle Errors ");
+                foreach (OracleError err in oraex.Errors) {
+                    Console.WriteLine (err.Message);
+                }
+            }
+            catch (Exception ex) {
+                Console.WriteLine ("Exception ");
+                Console.WriteLine (ex.Message.ToString());
+                Console.WriteLine (ex.InnerException.ToString());
 
-            FooContext ctx = new FooContext ();
+            }
 
-            var res = (from f in ctx.Foo select f).ToList ();
-            int i = 0;
-            i++;
+            Console.ReadKey ();
         }
     }
 }

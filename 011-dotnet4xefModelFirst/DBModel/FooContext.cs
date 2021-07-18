@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 
 namespace dotnet4xefModelFirst.DBModel {
     public class FooContext : DbContext {
-        public FooContext() : base ("HotelDb-CodeFirst") {
+        public FooContext() : base ("OracleDbContext") {
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+            modelBuilder.HasDefaultSchema ("DUMMY");
+        }
+
         public DbSet<Foo> Foo { get; set; }
     }
 }
