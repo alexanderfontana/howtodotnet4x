@@ -19,6 +19,8 @@ Einfacher Zugriff über Oracle-Treiber und den datareader
 * 3 [dotnet4xsimplemsoracleConnect](https://github.com/alexanderfontana/howtodotnet4x/tree/master/003-dotnet4xsimplemsoracleprojekt)
 
 ## 011-dotnet4xefModelFirst
+* 11 [dotnet4xefModelFirst](https://github.com/alexanderfontana/howtodotnet4x/tree/master/011-dotnet4xefModelFirst)
+
 https://docs.oracle.com/cd/E56485_01/win.121/e55744/InstallEntityConfig.htm#ODPNT8266
 Zugriff auf ORACLE via Entity Framework 6 - Model First- ohne Oracle Client Installationen.
 
