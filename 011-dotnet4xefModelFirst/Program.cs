@@ -18,6 +18,7 @@ namespace dotnet4xefModelFirst {
             Stopwatch sw = new Stopwatch ();
             sw.Start ();
             try {
+                // 1. auf Foo zugreifen
                 using (FooContext ctx = new FooContext ()) {
                     var resFoo = (from f in ctx.Foo select f).ToList ();
                     if (resFoo.Count > 0) {
@@ -46,7 +47,7 @@ namespace dotnet4xefModelFirst {
             }
 
 
-            // Hinzufügen einer Person
+            //2. Hinzufügen einer Person
             Console.WriteLine ("Start-Person wird hinzufefügt");
             using (FooContext ctx = new FooContext ()) {
                 Personen p = new Personen ();
@@ -57,7 +58,7 @@ namespace dotnet4xefModelFirst {
             Console.WriteLine ("Ende-Person wird hinzufefügt");
 
 
-
+            // 3. Auf Personen zugreifen.
             Console.WriteLine ("Abfrage Personen....");
             try {
                 using (FooContext ctx = new FooContext ()) {
