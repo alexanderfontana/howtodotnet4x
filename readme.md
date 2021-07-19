@@ -20,6 +20,8 @@ Einfacher Zugriff über Oracle-Treiber und den datareader
 
 ## 011-dotnet4xefModelFirst
 https://docs.oracle.com/cd/E56485_01/win.121/e55744/InstallEntityConfig.htm#ODPNT8266
+Zugriff auf ORACLE via Entity Framework 6 - Model First- ohne Oracle Client Installationen.
+
 
 
 Just Access a Oracle Db- in Docker Container- with EF Core 
