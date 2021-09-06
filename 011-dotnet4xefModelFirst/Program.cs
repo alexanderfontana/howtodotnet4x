@@ -9,6 +9,8 @@ using Oracle.ManagedDataAccess.Client;
 using System.Data.Common;
 using Oracle.ManagedDataAccess.EntityFramework;
 using dotnet4xefModelFirst.DBModel;
+using Microsoft.VisualBasic.Core;
+
 
 //https://entityframework-extensions.net/oracle-provider
 // https://www.programmersought.com/article/91055016143/
